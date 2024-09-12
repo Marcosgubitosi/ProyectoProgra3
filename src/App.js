@@ -1,7 +1,15 @@
+import Header from "./components/Header/Header";
+
 
 function App() {
+  //variables se declaran antes del return
   return (
-   <p> Marcos Gubitosi </p>
+    <>
+      <div/>
+          <Header />
+          <Footer />
+      <div/>
+    </>
   );
 }
 
