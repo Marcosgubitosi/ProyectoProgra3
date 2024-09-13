@@ -9,7 +9,7 @@ class Footer extends Component{
 
     render(){
         return (
-            <section className='header'>
+            <section className='footer'>
                
             </section>
         )

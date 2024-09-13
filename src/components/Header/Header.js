@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Navbar from '../Navbar/Navbar';
 
 
 class Header extends Component{
@@ -9,9 +10,10 @@ class Header extends Component{
 
     render(){
         return (
-            <section className='header'>
-               
-            </section>
+            <nav className='header'>
+                <Navbar/>
+                
+            </nav>
         )
     }
 }
