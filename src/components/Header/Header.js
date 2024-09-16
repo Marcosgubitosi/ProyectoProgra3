@@ -1,21 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import "./Header.css"
 
 
-class Header extends Component{
-    constructor (props) {
-        super(props)
-        this.state = ""
-    }
-
-    render(){
+function Header(){
         return (
-            <nav className='header'>
-                <Navbar/>
-                
-            </nav>
+            <header>
+                <nav className='nav'>
+                    <Navbar/> 
+                </nav>
+            </header>
         )
     }
-}
+
 
 export default Header
