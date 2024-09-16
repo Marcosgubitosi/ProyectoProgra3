@@ -6,7 +6,8 @@ import "./NowPlaying.css"
 class NowPlaying extends Component {
     constructor(){
         super()
-        this.state = { datos: [] }
+        this.state = { datos: [], inputName : "" }
+
     }
     componentDidMount (){
         const options = {
@@ -23,18 +24,34 @@ class NowPlaying extends Component {
             .catch(err => console.error(err));
 
     }
+    handleNameChange(event){
+      this.setState({
+          inputName: event.target.value
+      }, () => console.log(this.state.inputName) )
+    }
+
+    handleFormSubmit(){
+        console.log("se envio el form", this.state.inputName)
+    }
     render() { 
-        const {limit} = this.props       
+        const {limit} = this.props    
         return (
-          <section className='container'>
-            {this.state.datos.length === 0 ? (
-              <h3>Cargando...</h3>
-            ) : (
-              this.state.datos.map((pelicula, idx) => ( idx < limit &&
-                <NowPlayingCard key={idx} pelicula={pelicula} />
-              ))
-            )}
-          </section>
+          <>
+            <form onSubmit={(event) => event.preventDefault()}>
+              <p>Buscador de peliculas:</p>
+              <input onChange={(event) => this.handleNameChange(event)} name='userName'/>
+              <button onClick={() => this.handleFormSubmit()} type='submit'> Enviar </button>
+            </form>
+            <section className='container'>
+              {this.state.datos.length === 0 ? (
+                <h3>Cargando...</h3>
+              ) : (
+                this.state.datos.map((pelicula, idx) => ( idx < limit &&
+                  <NowPlayingCard key={idx} pelicula={pelicula} />
+                ))
+              )}
+            </section>
+          </>
         );
       }
       
