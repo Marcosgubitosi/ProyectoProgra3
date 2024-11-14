@@ -1,5 +1,4 @@
 import NowPlaying from '../components/NowPlaying./NowPlaying';
-
 const NowPlayingGeneral = ()=>{
     return(
         <>

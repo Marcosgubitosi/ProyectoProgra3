@@ -8,6 +8,7 @@ import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 import NowPlayingGeneral from "./pages/NowPlayingGeneral";
 import UpcomingGeneral from "./pages/UpcomingGeneral";
 import Detalle from "./components/Detalle/Detalle"
+import SearchResults from "./pages/SearchResults";
 
 const options = {
   method: 'GET',
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/nowplaying" component={NowPlayingGeneral}/>
             <Route exact path="/upcoming" component={UpcomingGeneral}/>
             <Route exact path="/pelicula/id/:id" component={Detalle}/>
+            <Route exact path="/search" component={SearchResults}/>
             <Route path="" component={PaginaNoEncontrada}/>
           </Switch>
         <Footer/>
